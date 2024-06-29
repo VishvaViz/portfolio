@@ -6,90 +6,54 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.designHoodFont {
-  font-family: "Jost", sans-serif;
+
+
+.maincircle{
+  width:330px;
+  height:330px;
+  border:1px solid #CCC;
+  position:absolute;
+  top:0; bottom:0; left:0;right:0;
+  margin:auto;
+  border-radius:50%; 
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
-/* src/components/CircularDesign.css */
-
-/* .circle {
-  position: relative;
-  width: 290px;
-  height: 290px;
-  background-color: #272727;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #fbb90f;
-  rotate: 100deg;
+.dot{
+  width:20px;
+  height:20px;
+  background:transparent;
+  /* border-radius:50%; */
+  position:absolute;
+  top:0; bottom:0; left:0;right:0;
+  overflow:hidden;
+  margin:auto;
+  animation: circle 7s linear infinite;
+}
+.dot1{
+  width:20px;
+  height:20px;
+  background:transparent;
+  /* border-style: double; */
+  /* border: 1px solid grey; */
+  border-radius:50%;
+  position:absolute;
+  top:0; bottom:0; left:0;right:0;
+  overflow:hidden;
+  margin:auto;
+  animation: circle 5s linear infinite;
 }
 
-.circle::before,
-.circle::after {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background-color: #fbb90f;
-  border-radius: 50%;
-  border: 2px solid #fbb90f;
-}
-
-.circle::before {
-  top: -6px;
-  left: 50%;
-  transform: translateX(-300%);
-}
-
-.circle::after {
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-200%);
-} */
-
-.circle {
-  /* width: 200px;
-  height: 100px;
-  border-top-left-radius: 110px;
-  border-top-right-radius: 110px;
-  border: 1px solid white;
-  border-bottom: 0;*/
-  /* width: 560px;
-  height: 310px;
-  border-radius: 50% 60% 10% 10% / 100% 100% 0 0;
-  border: 2px solid #ffff;
-  border-bottom: 0; */
-  /* rotate: 180deg; */
-
+@keyframes circle{
+  0%{
+    transform:rotate(0deg)
+              translate(-355px)
+              rotate(0deg);
   
-    width: 200px;
-    height: 200px;
-    background-color: #272727;
-    border-radius: 50%;
-    overflow: hidden;
-  
-  
-}
-.dot {
-  position: absolute;
-  background-color: white;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  }
+  100%{
+    transform:rotate(360deg)
+              translate(-355px)
+              rotate(-360deg);
+  }
 }
 
-.dot1 {
-  top: 20px;
-  left: 20px;
-}
-
-.dot2 {
-  bottom: 20px;
-  right: 20px;
-}

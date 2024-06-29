@@ -5,6 +5,12 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+.poppins{
+  font-family: 'Poppins', sans-serif;
+}
+.jost{
+  font-family: 'Jost', sans-serif;
+}
 
 .maincircle {
   width: 330px;

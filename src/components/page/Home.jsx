@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import styled, { keyframes } from 'styled-components';
+
 
 function Home() {
+
+
     const dataArray = [
         {
             id: 1,
@@ -50,6 +54,85 @@ function Home() {
         },
 
     ]
+
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const [height, setHeight] = React.useState(window.innerHeight);
+    let circleHeightWidth;
+    React.useEffect(() => {
+        const handleResize = () => {
+            setWidth(window.innerWidth);
+            setHeight(window.innerHeight);
+        };
+
+        // Add event listener for resize
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    // console.log('hight',window.innerHeight)
+    console.log('width', width)
+    const value = () => {
+        if (width > 1280) {
+            return 355
+        }
+        else if (width < 1280) {
+
+            return height / 4
+        }
+
+    }
+    console.log('value', value(width))
+    circleHeightWidth = width > 1280 ? 710 : height / 2
+    // useEffect(() => {
+    // }, [width])
+    console.log('circle',circleHeightWidth)
+
+
+    // /Define the keyframes for the animation
+    const circle = keyframes`
+        0% {
+            transform: rotate(0deg) translate(-${value(width)}px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translate(-${value(width)}px) rotate(-360deg);
+        }
+        `;
+
+        console.log('circle',circle)
+    const dot = styled.div`
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        /* border-radius:50%; */
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        margin: auto;
+        animation: ${circle} 7s linear infinite;
+    `
+    console.log('dot',dot)
+    const dot1 = styled.div`
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        /* border-radius:50%; */
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        margin: auto;
+        animation: ${circle} 5s linear infinite;
+    `
+
 
     return (
         <div className='bg-black w-full h-[100vh] space-y-[40px] relative overflow-hidden'>
@@ -119,23 +202,21 @@ function Home() {
                     </div>
 
                 </div>
-                   
+
 
             </div>
             <div className='' >
 
-            <div className='circle border bg-[#272727] border-white rounded-full absolute right-[-100px] bottom-[-200px]  w-[710px] h-[710px] '>
-                        {/* <div className=' absolute top-[150px] left-[10px] border border-white w-[16px] h-[16px] flex justify-center items-center rounded-full'> */}
-                        <div className='dot border-[2px] border-white rounded-full flex justify-center items-center'>
-                            <div className='bg-white   w-[13px] h-[13px] rounded-full' />
-                        </div>
-                        {/* <div className=' absolute top-[1px] left-[170px] border border-white w-[16px] h-[16px] flex justify-center items-center rounded-full'> */}
-                        <div className='dot1 border-[2px] border-white rounded-full flex justify-center items-center'>
-                            <div className='bg-white   w-[13px] h-[13px] rounded-full' />
-                        </div>
-                        <div className='flex flex-col justify-center items-center mt-[100px]'>
+                <div className={`circle border bg-[#272727] border-white rounded-full absolute right-[-100px] bottom-[-200px]  w-[${circleHeightWidth}px] h-[${circleHeightWidth}px]`}
+                >
+                    <div className={`${dot} border-[2px] border-white rounded-full flex justify-center items-center`}>
+                        <div className='bg-white   w-[13px] h-[13px] rounded-full' />
+                    </div>
+                    <div className={`${dot1} border-[2px] border-white rounded-full flex justify-center items-center`}>
+                        <div className='bg-white   w-[13px] h-[13px] rounded-full' />
+                    </div>
+                    <div className='flex flex-col justify-center items-center mt-[100px]'>
 
-                        {/* <div className='absolute top-[30px] left-[135px]'> */}
                         <div>
 
                             <span className='text-[#FBB90F] font-[700] text-[125px]  '>
@@ -150,11 +231,13 @@ function Home() {
                             </span>
                         </div>
 
-                        </div>
                     </div>
+                </div>
             </div>
         </div>
     )
+
+
 }
 
 export default Home

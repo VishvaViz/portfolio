@@ -75,7 +75,7 @@ const Circle = () => {
   return <>
   <div className='' >
 
-<div className={`circle border bg-[#272727] border-white rounded-full absolute right-[-100px] bottom-[-200px] `}
+<div className={`circle border bg-[#272727] border-white rounded-full relative left-[100px] top-[10px] `}
 style={{
     width: `${size}px`,
     height: `${size}px`

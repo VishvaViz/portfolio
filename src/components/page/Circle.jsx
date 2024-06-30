@@ -8,14 +8,15 @@ const Circle = () => {
   const adjustCircle = () => {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
-
-    if (screenWidth > 1280) {
-      setSize(710);
-      setTransitionValue(355);
+    //get 40% of width
+    const width = screenWidth * 0.8
+    const height = screenHeight * 0.8
+    if (width > height) {
+      setSize(height);
+      setTransitionValue(height/2);
     } else {
-      const newSize = screenHeight / 2;
-      setSize(newSize);
-      setTransitionValue(newSize / 2);
+      setSize(width);
+      setTransitionValue(width / 2);
     }
   };
 

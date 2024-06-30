@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
-
+import AnimatedNumbers from "react-animated-numbers";
 const Circle = () => {
   const [size, setSize] = useState(710);
   const [transitionValue, setTransitionValue] = useState(355);
-
+  const [num, setNum] = React.useState(15);
   const adjustCircle = () => {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
@@ -91,16 +91,25 @@ style={{
     </Dot1>
     <div className='flex flex-col justify-center items-center mt-[100px]'>
 
-        <div>
-
-            <span className='text-[#FBB90F] font-[700] text-[125px]  '>
-                15+
+        <div className='text-[#FBB90F] font-[700] text-[32px] flex'>
+        <AnimatedNumbers
+        // includeComma
+        // className={styles.container}
+        transitions={(index) => ({
+          type: "spring",
+          duration: index + 0.5,
+        })}
+        animateToNumber={num}
+        className=''
+        />
+            <span >
+            +
             </span>
 
         </div>
         <div>
 
-            <span className='text-white text-[69px] font-[500]'>
+            <span className='text-white text-[60px] font-[500]'>
                 Clients
             </span>
         </div>

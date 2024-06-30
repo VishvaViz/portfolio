@@ -122,7 +122,7 @@ function Home() {
                     </div>
 
                 </div>
-                <div className='w-[60%] h-full relative  p-[25px]'>
+                <div className='w-[40%] h-full relative  p-[25px]'>
 
                     <Circle/>
                 </div>

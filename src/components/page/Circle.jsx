@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
-
+import AnimatedNumbers from "react-animated-numbers";
 const Circle = () => {
   const [size, setSize] = useState(710);
   const [transitionValue, setTransitionValue] = useState(355);
-
+  const [num, setNum] = React.useState(15);
   const adjustCircle = () => {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
-
-    if (screenWidth > 1280) {
-      setSize(710);
-      setTransitionValue(355);
+    //get 40% of width
+    const width = screenWidth * 0.8
+    const height = screenHeight * 0.8
+    if (width > height) {
+      setSize(height);
+      setTransitionValue(height/2);
     } else {
-      const newSize = screenHeight / 2;
-      setSize(newSize);
-      setTransitionValue(newSize / 2);
+      setSize(width);
+      setTransitionValue(width / 2);
     }
   };
 
@@ -74,7 +75,7 @@ const Circle = () => {
   return <>
   <div className='' >
 
-<div className={`circle border bg-[#272727] border-white rounded-full absolute right-[-100px] bottom-[-200px] `}
+<div className={`circle border bg-[#272727] border-white rounded-full relative left-[100px] top-[10px] `}
 style={{
     width: `${size}px`,
     height: `${size}px`
@@ -90,16 +91,25 @@ style={{
     </Dot1>
     <div className='flex flex-col justify-center items-center mt-[100px]'>
 
-        <div>
-
-            <span className='text-[#FBB90F] font-[700] text-[125px]  '>
-                15+
+        <div className='text-[#FBB90F] font-[700] text-[32px] flex'>
+        <AnimatedNumbers
+        // includeComma
+        // className={styles.container}
+        transitions={(index) => ({
+          type: "spring",
+          duration: index + 0.5,
+        })}
+        animateToNumber={num}
+        className=''
+        />
+            <span >
+            +
             </span>
 
         </div>
         <div>
 
-            <span className='text-white text-[69px] font-[500]'>
+            <span className='text-white text-[60px] font-[500]'>
                 Clients
             </span>
         </div>

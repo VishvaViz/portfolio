@@ -106,7 +106,7 @@ function Home() {
 
 
             <div className='w-full h-[49.7%]  flex'>
-                <div className='w-[100%] h-full  p-[25px]'>
+                <div className='w-[60%] h-full  p-[25px]'>
                     <div className=''>
                         <span className='text-[#D9D9D9] font-[700] text-[60px] designHoodFont'>
                             DesignsHood
@@ -122,10 +122,14 @@ function Home() {
                     </div>
 
                 </div>
+                <div className='w-[40%] h-full relative  p-[25px]'>
+
+                    <Circle/>
+                </div>
+
 
 
             </div>
-            <Circle/>
             
         </div>
     )

@@ -84,7 +84,7 @@ function Home() {
                                         {/* {svg} */}
                                         {React.cloneElement(svg, {
                                             className: 'text-white group-hover:text-black', // Apply text color changes on hover
-                                        })}
+                                        })} 
                                     </div>
                                     <div className='flex flex-col justify-center items-center transform transition-transform duration-200 ease-in-out group-hover:translate-y-2'>
                                         <div>

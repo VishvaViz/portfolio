@@ -19,33 +19,34 @@ function Service() {
 
         {/* ***************************************************SERVICES HEADER************************************** */}
 
-        <div className="w-full h-[10%] p-[5px] flex items-center justify-between flex-wrap   ">
+        <nav className="w-full h-[10%] p-1 md:p-[10px] flex items-center justify-between md:flex-wrap    ">
           <div className="flex items-center gap-2 ml-3">
-            <img className="w-[50px] h-[50px]" src={Logo} alt="" />
-            <span className="text-[20px] font-[500] poppins">Services</span>
+            <img className="md:w-[50px] md:h-[50px] h-[30px] w-[30px]" src={Logo} alt="" />
+            <span className="md:text-[22px] text-[16px] font-[500] poppins">Teams</span>
           </div>
-          <div className="flex justify-between items-center  mr-[20px]">
-            <span className="w-[113px] h-[30px] poppins ">Contact Us</span>
-            <span className="w-[100px] flex justify-center items-center h-[34px] rounded-[30px] border-[1.23px] border-black p-[5px] poppins">
+          <div className="flex justify-between  w-[130px] md:w-[250px] items-center mr-1 md:mr-[20px]">
+            <span className="md:w-[113px] md:h-[30px] font-[500] w-[80px] text-[12px] md:text-[20px] poppins cursor-pointer ">
+              Contact Us
+            </span>
+            <span className="md:w-[100px] w-[50px] flex font-[500] justify-center cursor-pointer md:text-[20px] items-center md:h-[34px] h-[20px] md:rounded-[30px] rounded-[20px] md:border-[1.23px] border-[1px] text-[12px] border-black p-[2px] md:p-[5px] poppins">
               Home
             </span>
           </div>
-        </div>
-        <div className="section-1 h-[570px] flex w-full items-center px-24 ">
-          <div className="w-[525px] h-[545px] ">
+        </nav>
+        <div className="section-1 h-[250px] md:h-[570px] flex w-full items-center px-[10px] justify-around md:justify-normal  md:px-24 ">
+          <div className="md:w-[525px] md:h-[545px] h-[230px] w-[40%] ">
             <img src={img1} alt="" />
           </div>
-          <div className="w-[575px] h-[240px] ">
+          <div className="md:w-[575px] md:h-[240px] h-[200px] w-[40%] ">
             <img src={content} alt="" />
           </div>
         </div>
 
-        {/* *********************************************SERVICES CIRCLE****************************************************** */}
 
-        <div className=" space-y-[60px]">
+        <div className=" space-y-[10px] mt-10 md:mt-0 md:space-y-[60px]">
           <div className="flex flex-col justify-center items-center">
             <div className="">
-              <span className="jost text-[25px] font-[600]">
+              <span className="jost text-[28px] md:text-[25px] font-[600]">
                 Hood{" "}
                 <span className="jost text-[25px] font-[600] text-[#FBB90F]">
                   Services
@@ -53,7 +54,7 @@ function Service() {
               </span>
             </div>
             <div className="w-[90%]">
-              <p className="text-[20px] text-[#6C6C6C] font-[400] text-center leading-[40px]">
+              <p className="text-[16px] md:text-[20px] text-[#6C6C6C] font-[400] text-center leading-[20px] md:leading-[40px]">
                 At Designshood, our services encompass a comprehensive range of
                 offerings tailored to meet the diverse needs of our clients.
                 From design and development to branding and strategic
@@ -66,7 +67,11 @@ function Service() {
               </p>
             </div>
           </div>
-          <div className="flex justify-center items-center">
+       
+        </div>
+
+        {/* *********************************************SERVICES CIRCLE****************************************************** */}
+        <div className="flex justify-center items-center">
             <div className="flex flex-wrap items-center justify-evenly gap-10   w-[90%]">
               <Circle text={"UIUX Design"} deg={140} deg1={140} />
               <Circle text={"Development"} deg={180} deg1={150} />
@@ -75,14 +80,13 @@ function Service() {
               <Circle text={"Training"} deg={180} deg1={180} />
             </div>
           </div>
-        </div>
 
 
         {/* ***************************************** SERVICES 1-5 ****************************************** */}
 
-        <div className=" w-[90%] m-auto">
+        <div className=" w-[90%]  m-auto">
 
-        <div className="sec-one flex h-[570px]  items-center">
+        <div className="sec-one flex h-[570px] my-[10px]   items-center">
           <div className="w-[660px] space-y-2 h-[415px] flex flex-col items-start justify-center ">
             <div className="">
                

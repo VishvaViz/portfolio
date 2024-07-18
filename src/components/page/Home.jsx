@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import styled, { keyframes } from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import Circle from './Circle';
 const dataArray = [
     {
@@ -77,7 +78,7 @@ function Home() {
                 <div className=' w-full flex justify-evenly items-center gap-[20px]'>
                     {
                         dataArray.map(({ tittle, svg, description }) => {
-                            return <>
+                            return <NavLink to={tittle.toLocaleLowerCase()}>
                                 <div className='h-[181px] w-[181px] bg-[#272727] rounded-full flex gap-1 flex-col justify-center items-center hover:bg-[#FBB90F]  transition-all duration-200 ease-in-out group p-4 cursor-pointer'>
                                     <div className='transform transition-transform duration-200 ease-in-out group-hover:scale-150 group-hover:text-black'>
                                         {/* {svg} */}
@@ -98,7 +99,7 @@ function Home() {
                                         </div>
                                     </div>
                                 </div>
-                            </>
+                            </NavLink>
                         })
                     }
                 </div>

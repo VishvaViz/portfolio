@@ -2,9 +2,19 @@ import React from 'react'
 import Logo from "../../assets/Logo.svg";
 import hood from '../../assets/hoodians.svg'
 import object from '../../assets/objects.svg'
-import {Link} from 'react-router-dom'
+import img7 from "../../assets/service-footer1.svg";
+import img8 from "../../assets/service-footer2.svg";
+import { Link } from 'react-router-dom'
+import Axios from 'axios'
 
 function Teams() {
+    const [data, setData] = React.useState([])
+    React.useEffect(() => {
+        Axios.get('http://localhost:4000/api/getpost/teams')
+            .then((resp) => setData(resp.data))
+            .catch((err) => console.log(err))
+    }, [])
+    console.log('data', data)
     return (
         <div>
             <nav className="w-full h-[10%] p-1 md-p-[10px] flex items-center justify-between md:flex-wrap    ">
@@ -28,21 +38,43 @@ function Teams() {
                 <div className='flex justify-center items-center'>
                     <img src={object} alt="" />
                 </div>
-                <div className='w-[90%]'>
+                <div className='w-[90%] flex flex-col gap-5'>
 
                     <div className='flex justify-center items-center  '>
                         <p className='text-center text-[20px] text-[#6C6C6C] leading-[43px] '>
                             At Designshood, our team is the heart and soul of our success. We are a collective of passionate, talented, and dedicated professionals, each bringing unique skills and perspectives to the table. Together, we drive innovation, creativity, and excellence in everything we do.
                         </p>
                     </div>
+
                     <div className='flex flex-col gap-5'>
                         {
-                            [1,2].map(()=>{
-                                return <div className='w-full h-[600px] border border-black  rounded-[50px]'>
-                                        
-                                </div>
-                            })
+                            data.length > 0 ?
+                                <>
+                                    {
+                                        data.map(({ _id, postfile }) => (
+                                            <div className='w-full h-[600px] border border-black  rounded-[50px] flex justify-center items-center'>
+                                                <img
+                                                    key={_id}
+                                                    src={`data:image/png;base64,${postfile}`}
+                                                    alt="Portfolio Item"
+                                                    className='w-full h-full rounded-[50px] '
+                                                />
+                                            </div>
+                                        ))
+                                    }
+                                </>
+                                :
+                                <>
+                                </>
                         }
+                    </div>
+                    <div className=" mt-[100px] flex w-full h-[200px]">
+                        <div className="w-[70%] ">
+                            <img src={img7} alt="" />
+                        </div>
+                        <div className="w-[30%] ">
+                            <img src={img8} alt="" />
+                        </div>
                     </div>
                 </div>
             </section>

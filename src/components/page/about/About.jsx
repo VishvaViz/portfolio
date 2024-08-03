@@ -35,8 +35,8 @@ function About() {
                     </div>
                 </div>
 
-                <div className='flex justify-around items-center '>
-                    <div className=''>
+                <div className='flex justify-around items-center relative '>
+                    <div className=' absolute left-0 top-0'>
                         <img className='' src={SemiCircl} alt="" />
                     </div>
                     <div className='flex flex-col justify-center items-center'>

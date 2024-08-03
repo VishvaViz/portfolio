@@ -5,9 +5,18 @@ import hood from '../../assets/hoodwork.svg'
 import img7 from "../../assets/service-footer1.svg";
 import img8 from "../../assets/service-footer2.svg";
 import { Link } from 'react-router-dom'
+import Axios from 'axios'
 
 
 function Portfolio() {
+    const [data, setData] = React.useState([])
+    React.useEffect(() => {
+        Axios.get('https://portfolio-backend-7262.onrender.com/api/getpost/portfolio')
+            .then((resp) => setData(resp.data))
+            .catch((err) => console.log(err))
+    }, [])
+    console.log('data', data)
+
     return (
         <div>
             <nav className="w-full h-[10%] p-1 md-p-[10px] flex items-center justify-between md:flex-wrap    ">
@@ -33,15 +42,18 @@ function Portfolio() {
                         <img src={portfolio} alt="" />
                     </div>
                 </div>
-                <div className='w-full h-[800px] bg-[#FDDC87]'>
+                <div className='w-full h-[800px]'>
+                    {data.map(({ _id, postfile }) => (
+                        <img
+                            key={_id}
+                            src={`data:image/png;base64,${postfile}`}
+                            alt="Portfolio Item"
+                            className='w-full h-full '
+                        />
+                    ))}
 
                 </div>
-                <div className='w-full h-[800px] bg-[#002D49]'>
 
-                </div>
-                <div className='w-full h-[800px] bg-[#E73785]'>
-
-                </div>
 
                 <div className=" mt-[100px] flex w-full h-[200px]">
                     <div className="w-[70%] ">

@@ -124,7 +124,6 @@ function Home() {
 
                 </div>
                 <div className='w-[40%] h-full relative  p-[25px]'>
-
                     <Circle/>
                 </div>
 

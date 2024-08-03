@@ -11,6 +11,8 @@ import Circle from './Circle'
 import bg from '../../assets/about-footer-bg.svg'
 import x from '../../assets/about-footer-left.svg'
 import y from '../../assets/service-footer1.svg'
+import { Link } from 'react-router-dom'
+
 function About() {
     return (
         <div>
@@ -23,13 +25,13 @@ function About() {
                             About us
                         </span>
                     </div>
-                    <div className='flex justify-between items-center  mr-[20px]'>
-                        <span className='w-[113px] h-[30px] poppins '>
+                    <div className="flex justify-between  w-[130px] md:w-[250px] items-center mr-1 md:mr-[20px]">
+                        <Link to='/contact' className="md:w-[113px] md:h-[30px] font-[500] w-[80px] text-[12px] md:text-[20px] poppins cursor-pointer ">
                             Contact Us
-                        </span>
-                        <span className='w-[100px] flex justify-center items-center h-[34px] rounded-[30px] border-[1.23px] border-black p-[5px] poppins'>
+                        </Link>
+                        <Link to='/' className="md:w-[100px] w-[50px] flex font-[500] justify-center cursor-pointer md:text-[20px] items-center md:h-[34px] h-[20px] md:rounded-[30px] rounded-[20px] md:border-[1.23px] border-[1px] text-[12px] border-black p-[2px] md:p-[5px] poppins">
                             Home
-                        </span>
+                        </Link>
                     </div>
                 </div>
 
@@ -152,12 +154,12 @@ function About() {
                             <span className='text-[#000000] font-[700] text-[29px] leading-[42px]'>Commitment</span>
                         </div>
                         <div className="w-[90%] ml-20">
-                        <p className="text-[#6c6c6c] mt-5  text-[20px] font-bold leading-[44px] w-[100%] px-14  flex justify-center items-center">
-                            At Designshood, our passion lies in sharing knowledge and delivering excellence. We are dedicated to transferring our
-                            expertise to others through comprehensive training programs and ensuring that every project we undertake
-                            is completed on time with the highest quality standards. Your success is our mission, and we
-                            strive to exceed expectations with every design and development endeavor.
-                        </p>
+                            <p className="text-[#6c6c6c] mt-5  text-[20px] font-bold leading-[44px] w-[100%] px-14  flex justify-center items-center">
+                                At Designshood, our passion lies in sharing knowledge and delivering excellence. We are dedicated to transferring our
+                                expertise to others through comprehensive training programs and ensuring that every project we undertake
+                                is completed on time with the highest quality standards. Your success is our mission, and we
+                                strive to exceed expectations with every design and development endeavor.
+                            </p>
                         </div>
 
                         <div className=' z-[9000] absolute right-0 top-0'>

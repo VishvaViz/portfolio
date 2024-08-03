@@ -6,6 +6,7 @@ import logo1 from "../../assets/contact-mob.svg";
 import logo2 from "../../assets/contact-mail.svg";
 import logo3 from "../../assets/contact-location.svg";
 import footer from '../../assets/contact-footer.svg'
+import { Link } from 'react-router-dom'
 
 function Contact() {
   return (
@@ -14,15 +15,15 @@ function Contact() {
         <nav className="w-full h-[10%] p-1 md-p-[10px] flex items-center justify-between md:flex-wrap    ">
           <div className="flex items-center gap-2 ml-3">
             <img className="md:w-[50px] md:h-[50px] h-[30px] w-[30px]" src={Logo} alt="" />
-            <span className="md:text-[22px] text-[16px] font-[500] poppins">Teams</span>
+            <span className="md:text-[22px] text-[16px] font-[500] poppins">Contacts</span>
           </div>
           <div className="flex justify-between  w-[130px] md:w-[250px] items-center mr-1 md:mr-[20px]">
-            <span className="md:w-[113px] md:h-[30px] font-[500] w-[80px] text-[12px] md:text-[20px] poppins cursor-pointer ">
+            <Link to='/contact' className="md:w-[113px] md:h-[30px] font-[500] w-[80px] text-[12px] md:text-[20px] poppins cursor-pointer ">
               Contact Us
-            </span>
-            <span className="md:w-[100px] w-[50px] flex font-[500] justify-center cursor-pointer md:text-[20px] items-center md:h-[34px] h-[20px] md:rounded-[30px] rounded-[20px] md:border-[1.23px] border-[1px] text-[12px] border-black p-[2px] md:p-[5px] poppins">
+            </Link>
+            <Link to='/' className="md:w-[100px] w-[50px] flex font-[500] justify-center cursor-pointer md:text-[20px] items-center md:h-[34px] h-[20px] md:rounded-[30px] rounded-[20px] md:border-[1.23px] border-[1px] text-[12px] border-black p-[2px] md:p-[5px] poppins">
               Home
-            </span>
+            </Link>
           </div>
         </nav>
 

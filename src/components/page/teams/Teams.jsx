@@ -10,7 +10,7 @@ import Axios from 'axios'
 function Teams() {
     const [data, setData] = React.useState([])
     React.useEffect(() => {
-        Axios.get('http://localhost:4000/api/getpost/teams')
+        Axios.get('https://portfolio-backend-7262.onrender.com/api/getpost/teams')
             .then((resp) => setData(resp.data))
             .catch((err) => console.log(err))
     }, [])

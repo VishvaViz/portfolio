@@ -42,17 +42,17 @@ function Portfolio() {
                         <img src={portfolio} alt="" />
                     </div>
                 </div>
-                <div className='w-full h-[800px]'>
-                    {data.map(({ _id, postfile }) => (
+                {data.map(({ _id, postfile }) => (
+                    <div className='w-full h-[800px]'>
                         <img
                             key={_id}
                             src={`data:image/png;base64,${postfile}`}
                             alt="Portfolio Item"
                             className='w-full h-full '
                         />
-                    ))}
+                    </div>
+                ))}
 
-                </div>
 
 
                 <div className=" mt-[100px] flex w-full h-[200px]">
